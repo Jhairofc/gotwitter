@@ -1,4 +1,4 @@
 module github.com/Jhairofc/gotwitter
-go 1.14.4
+go1.14.4
 require(
 )
