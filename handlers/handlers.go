@@ -17,6 +17,10 @@ func Handlers() {
 	//Endpoints
 	//Registro de Usuarios
 	router.HandleFunc("/registro", middleware.Checkdb(routers.RegisterUs)).Methods("POST")
+	//Login de Usuarios
+	router.HandleFunc("/login", middleware.Checkdb(routers.Login)).Methods("POST")
+	//Procesar el Token del Login
+	router.HandleFunc("/perfil", middleware.Checkdb(middleware.ValidateJWT(routers.ViewProfile))).Methods("GET")
 
 	PORT := os.Getenv("PORT")
 	if PORT == "" {

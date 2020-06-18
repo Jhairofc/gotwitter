@@ -8,7 +8,7 @@ import (
 
 //User modelo para la administracion de usuarios
 type User struct {
-	ID        primitive.ObjectID `bson:"_id, omitempty" json:"id"`
+	ID        primitive.ObjectID `bson:"_id,omitempty" json:"id"`
 	Nombre    string             `bson:"nombre" json:"nombre,omitempty"`
 	Apellido  string             `bson:"apellido" json:"apellido,omitempty"`
 	FechaNac  time.Time          `bson:"fechanac" json:"fechanac,omitempty"`
