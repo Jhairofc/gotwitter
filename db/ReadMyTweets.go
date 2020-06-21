@@ -44,5 +44,6 @@ func ReadMyTweets(id string, page int64) ([]*models.MyTweets, bool, error) {
 		//Llenamos cada tweet en el slice de tweets
 		results = append(results, &tweet)
 	}
+	cursor.Close(context.TODO())
 	return results, true, nil
 }

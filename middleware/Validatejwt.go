@@ -11,7 +11,7 @@ func ValidateJWT(next http.HandlerFunc) http.HandlerFunc {
 	return func(res http.ResponseWriter, req *http.Request) {
 		_, _, _, error := routers.ProcessToken(req.Header.Get("Authorization"))
 		if error != nil {
-			http.Error(res, "Error al obtener el token"+error.Error(), http.StatusBadRequest)
+			http.Error(res, "Error al obtener el token "+error.Error(), http.StatusBadRequest)
 			return
 		}
 		next.ServeHTTP(res, req)
